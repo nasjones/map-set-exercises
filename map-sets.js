@@ -24,11 +24,10 @@ console.log(hasDuplicate([1, 5, -1, 4])); // false
 let vowelCount = (str) => {
 	str = str.toLowerCase();
 	let vowelMap = new Map();
-	for (const i in str) {
-		if ("aeiou".includes(str[i])) {
-			if (vowelMap.has(str[i]))
-				vowelMap.set(str[i], vowelMap.get(str[i]) + 1);
-			else vowelMap.set(str[i], 1);
+	for (const char of str) {
+		if ("aeiou".includes(char)) {
+			if (vowelMap.has(char)) vowelMap.set(char, vowelMap.get(char) + 1);
+			else vowelMap.set(char, 1);
 		}
 	}
 	return vowelMap;
